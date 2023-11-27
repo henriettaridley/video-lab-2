@@ -1,0 +1,142 @@
+# find . -name ".git" -type d -print
+
+# git credential-cache exit
+# git config --global --unset credential.helper
+
+# ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+
+# General Python ignores
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+*.py,cover
+*.pyc
+env/
+build/
+dist/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+*.cover
+.hypothesis/
+.pytest_cache/
+cover/
+*.mo
+/docs/_build/
+.target/
+.ipynb_checkpoints
+.env
+.venv
+.env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.spyderproject
+.spyproject
+.ropeproject
+/site
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.pytype/
+
+# General tools and OS files
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+.scrapy
+.pybuilder/
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+.pyenv/
+# .python-version (Consider whether to ignore or not)
+# Pipfile.lock (Consider whether to ignore or not)
+__pypackages__/
+celerybeat-schedule
+celerybeat.pid
+*.sage.py
+.spyderproject
+.spyproject
+.ropeproject
+/site
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.pytype/
+cython_debug/
+
+# Specific to the 'apex' library
+/apex/
+apex.egg-info
+dist
+build
+docs/build
+.vscode
+
+# Specific to the 'cityscapesScripts' library
+/cityscapesScripts/__pycache__/
+/cityscapesScripts/*.py[cod]
+/cityscapesScripts/addToConfusionMatrix.c
+/cityscapesScripts/.Python
+/cityscapesScripts/env/
+/cityscapesScripts/build/
+/cityscapesScripts/*.egg-info/
+/cityscapesScripts/*.egg
+/cityscapesScripts/cityscapesLabelTool.conf
+# JSON and other files
+/cityscapesScripts/*.json
+/cityscapesScripts/*.DS_Store
+
+# Specific to the 'mega.pytorch' library
+/mega.pytorch/__pycache__
+/mega.pytorch/_ext
+/mega.pytorch/*.pyc
+/mega.pytorch/*.so
+/mega.pytorch/mega_core.egg-info/
+/mega.pytorch/build/
+/mega.pytorch/dist/
+/mega.pytorch/*.pth
+/mega.pytorch/*.pkl
+/mega.pytorch/*.npy
+/mega.pytorch/**/.ipynb_checkpoints/
+/mega.pytorch/*.swn
+/mega.pytorch/*.swo
+/mega.pytorch/*.swp
+/mega.pytorch/*~
+/mega.pytorch/.idea
+/mega.pytorch/.vscode
+/mega.pytorch/.DS_Store
+/mega.pytorch/models
+/mega.pytorch/datasets/UCF50
+
+# Specific to the 'cocoapi' library
+/cocoapi/images/
+/cocoapi/annotations/
+/cocoapi/results/
+/cocoapi/external/
+/cocoapi/.DS_Store
+/cocoapi/MatlabAPI/analyze*/
+/cocoapi/MatlabAPI/visualize*/
+/cocoapi/MatlabAPI/private/maskApiMex.*
+/cocoapi/PythonAPI/pycocotools/__init__.pyc
+/cocoapi/PythonAPI/pycocotools/_mask.c
+/cocoapi/PythonAPI/pycocotools/_mask.so
+/cocoapi/PythonAPI/pycocotools/coco.pyc
+/cocoapi/PythonAPI/pycocotools/cocoeval.pyc
+/cocoapi/PythonAPI/pycocotools/mask.pyc
