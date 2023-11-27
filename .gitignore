@@ -82,12 +82,11 @@ dmypy.json
 cython_debug/
 
 # Specific to the 'apex' library
-/apex/
-apex.egg-info
-dist
-build
-docs/build
-.vscode
+/apex/apex.egg-info
+/apex/dist
+/apex/build
+/apex/docs/build
+/apex/.vscode
 
 # Specific to the 'cityscapesScripts' library
 /cityscapesScripts/__pycache__/
