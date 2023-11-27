@@ -4,18 +4,16 @@ The demo script supports visualization for video object detection. It can proces
 
 ## Requirements
 
-This demo uses the UCF50 dataset which can be downloaded and extracted with the following Python script:
+This demo uses the UCF50 dataset which can be downloaded from here: https://www.crcv.ucf.edu/data/UCF50.rar and extracted with the following Python script:
 
 ```python
 import os
 import urllib.request
 import rarfile
 
-UCF50_URL = 'https://www.crcv.ucf.edu/data/UCF50.rar'
 UCF50_PATH = 'datasets/UCF50.rar'
 
 # Download and extract the UCF50 dataset
-urllib.request.urlretrieve(UCF50_URL, UCF50_PATH)
 with rarfile.RarFile(UCF50_PATH) as rf:
     rf.extractall()
 os.remove(UCF50_PATH)
@@ -26,6 +24,8 @@ Ensure to have the `rarfile` Python package installed before running the script:
 ```shell
 pip install rarfile
 ```
+
+The additional video: rouen.avi, can be downloaded from here: https://www.jpjodoin.com/urbantracker/dataset.html.
 
 ## Inference on an Image Folder
 
@@ -68,25 +68,47 @@ declare -a VIDEOS=(
     "datasets/UCF50/WalkingWithDog/v_WalkingWithDog_g10_c03.avi"
     "datasets/UCF50/WalkingWithDog/v_WalkingWithDog_g01_c01.avi"
     "datasets/UCF50/HorseRiding/v_HorseRiding_g10_c01.avi"
-    "datasets/UCF50/Drumming/v_Drumming_g01_c03.avi"
+    "datasets/rouen.avi"
 )
 
 # Define methods and configs
+# Define checkpoints and their corresponding config files
+declare -A CHECKPOINTS=(
+    ["base"]="R_101.pth"
+    ["mega"]="MEGA_R_101.pth"
+)
+
 declare -A CONFIGS=(
     ["base"]="configs/vid_R_101_C4_1x.yaml"
     ["mega"]="configs/MEGA/vid_R_101_C4_MEGA_1x.yaml"
 )
 
-# Process videos
 for METHOD in "${!CONFIGS[@]}"; do
     CONFIG="${CONFIGS[$METHOD]}"
+    CHECKPOINT="${CHECKPOINTS[$METHOD]}"
+    
     for VIDEO_PATH in "${VIDEOS[@]}"; do
+        # Extract video name without extension and parent folders
         VIDEO_NAME=$(basename -- "$VIDEO_PATH")
         VIDEO_NAME="${VIDEO_NAME%.*}"
+        
+        # Set the output folder
         OUTPUT_FOLDER="visualization/${METHOD}/${VIDEO_NAME}"
+
+        # Create the output folder
         mkdir -p "$OUTPUT_FOLDER"
-        python demo/demo.py $METHOD $CONFIG $CHECKPOINT --video --visualize-path "$VIDEO_PATH" --output-folder "$OUTPUT_FOLDER" --output-video
-        echo "Visualization for $VIDEO_NAME with $METHOD method complete."
+
+        # Run the command for generating frames
+        python demo/demo.py $METHOD $CONFIG $CHECKPOINT --video \
+            --visualize-path "$VIDEO_PATH" \
+            --output-folder "$OUTPUT_FOLDER"
+
+        # Run the command for generating video (assuming that the frames will be generated in the same run)
+        python demo/demo.py $METHOD $CONFIG $CHECKPOINT --video \
+            --visualize-path "$VIDEO_PATH" \
+            --output-folder "$OUTPUT_FOLDER" --output-video
+
+        echo "Visualization for $VIDEO_NAME with $METHOD method complete, both frames and video have been generated."
     done
 done
 

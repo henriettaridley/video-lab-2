@@ -123,6 +123,9 @@ cython_debug/
 /mega.pytorch/.DS_Store
 /mega.pytorch/models
 /mega.pytorch/datasets/UCF50
+/mega.pytorch/visualization/base/**/*.jpg
+/mega.pytorch/visualization/mega/**/*.jpg
+
 
 # Specific to the 'cocoapi' library
 /cocoapi/images/

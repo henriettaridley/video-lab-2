@@ -41,6 +41,7 @@ In order to run the demo, make sure you have completed the installation steps an
 
 ### Prerequisites
 - Download the `R_101.pth` checkpoint file and ensure it is located in the root of the `mega.pytorch` directory, or update the demo command with the correct path to the checkpoint file.
+- Download the `MEGA_R_101.pth` checkpoint file and ensure it is located in the root of the `mega.pytorch` directory, or update the demo command with the correct path to the checkpoint file.
 - Place your image/video folder within the `datasets/` directory of the `mega.pytorch` project. For example, if you have an `image_folder` containing frames of a video, it should be placed as `mega.pytorch/datasets/image_folder`.
 
 ### Steps to Run a Demo
@@ -53,6 +54,3 @@ In order to run the demo, make sure you have completed the installation steps an
 
 2. Follow the instructions in the README within the `demo/` directory to run a demo. The README there contains specific commands and examples on how to execute the demo script with various configurations and methods.
 
-git@github.com:henriettaridley/video-lab-2.git
-
-https://github.com/henriettaridley/video-lab-2.git
