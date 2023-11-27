@@ -80,7 +80,7 @@ dmypy.json
 .pytype/
 .pytype/
 cython_debug/
-.vscode
+/.vscode/
 
 # Specific to the 'apex' library
 /apex/apex.egg-info
