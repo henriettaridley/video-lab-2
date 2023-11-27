@@ -7,13 +7,15 @@ By [Yihong Chen](https://scalsol.github.io), [Yue Cao](http://yue-cao.me), [Han 
 
 This repo is an official implementation of ["Memory Enhanced Global-Local Aggregation for Video Object Detection"](https://arxiv.org/abs/2003.12063), accepted by CVPR 2020. This repository contains a PyTorch implementation of our approach MEGA based on [maskrcnn_benchmark](https://github.com/facebookresearch/maskrcnn-benchmark), as well as some training scripts to reproduce the results on ImageNet VID reported in our paper. 
 
-Besides, this repository also implements several other algorithms like [FGFA](http://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Flow-Guided_Feature_Aggregation_ICCV_2017_paper.html) and [RDN](https://arxiv.org/abs/1908.09511). Any new methods are welcomed. Hoping for your pull request! We hope this repository would help further research in the field of video object detection and beyond. :)
+Besides, this repository also implements several other algorithms like [FGFA](http://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Flow-Guided_Feature_Aggreation_ICCV_2017_paper.html) and [RDN](https://arxiv.org/abs/1908.09511). Any new methods are welcomed. Hoping for your pull request! We hope this repository would help further research in the field of video object detection and beyond. :)
 
 ## Installation
 
-Please follow [INSTALL_ENV.md](INSTALL.md) for installation instructions. These have been updated to include the correct package dependencies required for the running of this project.
+We provide 3 methods to install the packages required to run the demo. Please head to [INSTALL_ENV.md](INSTALL.md) for installation instructions. 
 
-If you would like to run from the download packages instead. There are several updates which need to be made to the apex package to ensure it runs with Torch 10.2.
+1. There exists a YAML file, which has been updated to include the correct package dependencies required for the running of this project.
+2. The git repo folders have already been downloaded and modified, therefore to run these the git clone lines have been removed.
+3. If you would like to manually install from scratch, please note there are several updates which need to be made to the apex package to ensure it runs with Torch 10.2.
 
 1. **AttributeError: module 'torch.cuda' has no attribute 'amp'**
    - This error suggests that the version of PyTorch being used does not have the `amp` module available under `torch.cuda`, which is a feature introduced in PyTorch 1.6.0. 
@@ -50,3 +52,7 @@ In order to run the demo, make sure you have completed the installation steps an
    ```
 
 2. Follow the instructions in the README within the `demo/` directory to run a demo. The README there contains specific commands and examples on how to execute the demo script with various configurations and methods.
+
+git@github.com:henriettaridley/video-lab-2.git
+
+https://github.com/henriettaridley/video-lab-2.git
