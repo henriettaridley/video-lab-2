@@ -80,6 +80,7 @@ dmypy.json
 .pytype/
 .pytype/
 cython_debug/
+.vscode/
 
 # Specific to the 'apex' library
 /apex/apex.egg-info
@@ -113,7 +114,7 @@ cython_debug/
 /mega.pytorch/*.pth
 /mega.pytorch/*.pkl
 /mega.pytorch/*.npy
-/mega.pytorch/**/.ipynb_checkpoints/
+/mega.pytorch/**/.ipynb_checkpoints/base
 /mega.pytorch/*.swn
 /mega.pytorch/*.swo
 /mega.pytorch/*.swp
